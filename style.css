@@ -2,3 +2,14 @@ body {
   background-color: #e0f2fe;
   color: rgb(0, 0, 0);
 }
+
+
+button {
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+
+li {
+  list-style-type: none;
+}
