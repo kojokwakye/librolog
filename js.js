@@ -1,6 +1,6 @@
 const myLibrary = [];
 
-// myLibrary.push(book)
+myLibrary.push(book)
 
 for (let i = o; i < myLibrary.length; i++) {
   let book = prompt("name of the book", "enter title");
