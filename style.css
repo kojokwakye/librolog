@@ -3,13 +3,14 @@ body {
   color: rgb(0, 0, 0);
 }
 
-
-/* button {
-  padding: 20px;
-  font-size: 1.2em;
-  font-weight: bolder;
+label {
+  display: block;
+  margin-top: 1rem;
 }
 
-li {
-  list-style-type: none;
-} */
+button {
+  margin-top: 2rem;
+}
+input:required {
+  border: 1px solid;
+}
