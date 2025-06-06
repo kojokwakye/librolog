@@ -3,14 +3,5 @@ body {
   color: rgb(0, 0, 0);
 }
 
-label {
-  display: block;
-  margin-top: 1rem;
-}
 
-button {
-  margin-top: 1rem;
-}
-input:required {
-  border: 1px solid;
-}
+
