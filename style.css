@@ -15,7 +15,7 @@ body {
   outline: 1px solid red;
 }
 .form-popup {
-  max-width 200px;
+  /* max-width: 200px; */
   padding: 10px;
   background: #14181c 0 -1px repeat-x;
   
