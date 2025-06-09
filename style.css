@@ -20,43 +20,61 @@ body {
   align-items: center;
 }
 
-
 .form-page {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   /* padding: 20px; */
 }
 .form-popup {
   /* max-width: 200px; */
   padding: 10px;
   background: #14181c 0 -1px repeat-x;
-  
 }
 /* off by default  */
 #form {
-  /* display: none; */
+  display: none;
 }
 
-.form-popup input[type=text], 
-.form-popup input[type=number] {
+.form-popup input[type="text"],
+.form-popup input[type="number"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
-} 
+}
 
-.form-popup input[type=text]:focus, .form-popup input[type=number]:focus {
+.form-popup input[type="text"]:focus,
+.form-popup input[type="number"]:focus {
   background-color: #ddd;
   outline: none;
 }
-h1  {
+h1 {
   margin-bottom: 10px;
 }
-button {
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logandsub {
   background: #00ac1c;
   color: #fff;
   border: none;
   padding: 0.6rem;
   cursor: pointer;
+}
+
+.close {
+  padding: 1em;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+}
+.close:hover {
+  background: none;
+  cursor: pointer;
+  color: #00ac1c;
 }
 
 #log {
@@ -68,4 +86,3 @@ button:hover,
 button:focus {
   background: #00ac1d9f;
 }
-
