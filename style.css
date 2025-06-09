@@ -1,7 +1,16 @@
-body {
+* {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body,
+html {
+  height: 100%;
+}
+body {
   background: #14181c 0 -1px repeat-x;
-  min-height: 100vh;
+  min-height: 100%;
   color: whitesmoke;
   overflow: auto;
   font-family: monospace;
@@ -11,8 +20,10 @@ body {
   align-items: center;
 }
 
+
 .form-page {
   outline: 1px solid red;
+  /* padding: 20px; */
 }
 .form-popup {
   /* max-width: 200px; */
@@ -23,12 +34,11 @@ body {
 /* off by default  */
 #form {
   /* display: none; */
-  /* border: 3px solid #f1f1f1; */
 }
 
 .form-popup input[type=text], 
 .form-popup input[type=number] {
-  width: 95%;
+  width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
@@ -38,7 +48,9 @@ body {
   background-color: #ddd;
   outline: none;
 }
-
+h1  {
+  margin-bottom: 10px;
+}
 button {
   background: #00ac1c;
   color: #fff;
