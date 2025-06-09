@@ -8,14 +8,32 @@
     <title>Library</title>
   </head>
   <body>
-   <main>
-  <div class="wrapper">
-         <button>log book</button>
-    <form>
-   
- 
-    </form>
-  </div>
-</main>
-  </body> 
+    <div class="form-page">
+    <main>
+        <button id="log">+ log book</button>
+      <div class="form-popup" id="form"
+        <div id="popup">
+          <p>add book</p>
+          <form>
+            <!-- add book  -->
+            <label for="title"> title</label>
+            <input id="title" type="text" required />
+
+            <label for="author">author</label>
+            <input id="author" type="text" required />
+
+            <label for="pages">Pages</label>
+
+            <input type="number" id="pages" name="pages" required />
+
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <label for="submit">have you read</label>
+            <button id="submit" type="submit">submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    </div>
+
+  </body>
 </html>

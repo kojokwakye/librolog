@@ -1,7 +1,59 @@
 body {
-  background-color: #e0f2fe;
-  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  background: #14181c 0 -1px repeat-x;
+  min-height: 100vh;
+  color: whitesmoke;
+  overflow: auto;
+  font-family: monospace;
+  font-size: 1.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.form-page {
+  outline: 1px solid red;
+}
+.form-popup {
+  max-width 200px;
+  padding: 10px;
+  background: #14181c 0 -1px repeat-x;
+  
+}
+/* off by default  */
+#form {
+  /* display: none; */
+  /* border: 3px solid #f1f1f1; */
+}
 
+.form-popup input[type=text], 
+.form-popup input[type=number] {
+  width: 95%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+} 
+
+.form-popup input[type=text]:focus, .form-popup input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+button {
+  background: #00ac1c;
+  color: #fff;
+  border: none;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+#log {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+button:hover,
+button:focus {
+  background: #00ac1d9f;
+}
 
