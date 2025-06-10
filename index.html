@@ -4,18 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="js.js"></script>
     <title>Library</title>
   </head>
   <body>
     <div class="form-page">
       <main>
-        <button class="logandsub" id="log" onclick="formPopUp()">+ log book</button>
+        <button class="logandsub" id="log">+ log book</button>
         <div class="form-popup" id="form">
           <div id="popup">
             <div class="form-header">
               <h1>add book</h1>
-              <button class="close" onclick="closeForm()" >x</button>
+              <button class="close" id="closebtn" onclick="closeForm()" >x</button>
             </div>
             <form>
               <!-- add book  -->
@@ -39,5 +38,6 @@
         </div>
       </main>
     </div>
+    <script src="js.js"></script>
   </body>
 </html>
