@@ -20,18 +20,10 @@ body {
   align-items: center;
 }
 
-.form-page {
-  /* outline: 1px solid red; */
-  /* padding: 20px; */
-}
 .form-popup {
-  /* max-width: 200px; */
   padding: 10px;
   background: #14181c 0 -1px repeat-x;
-}
-/* off by default  */
-#form {
-  display: none;
+  color: white;
 }
 
 .form-popup input[type="text"],
@@ -89,7 +81,6 @@ button:focus {
   background: #00ac1d9f;
 }
 
-
 /* Remove Arrows/Spinners  */
 
 /* Chrome, Safari, Edge, Opera */
@@ -100,6 +91,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }

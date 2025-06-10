@@ -1,11 +1,21 @@
-const logButton = document.getElementById("log");
+const dialog = document.querySelector("dialog");
+const logButton = document.querySelector("dialog  + button");
+const closButton = document.querySelector("dialog button");
+
 logButton.addEventListener("click", () => {
-  document.getElementById("form").style.display = "block";
-  document.getElementById("log").style.display = "none";
+  dialog.showModal();
 });
 
-const closButton = document.getElementById("closebtn");
 closButton.addEventListener("click", () => {
-  document.getElementById("form").style.display = "none";
-  document.getElementById("log").style.display = "block";
+  dialog.close();
 });
+
+// const myLibrary = [];
+
+// function Book() {
+//   // the constructor...
+// }
+
+// function addBookToLibrary() {
+//   // take params, create a book then store it in the array
+// }
