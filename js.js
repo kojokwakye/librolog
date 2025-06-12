@@ -1,6 +1,7 @@
 const dialog = document.querySelector("dialog");
 const logButton = document.querySelector("dialog  + button");
 const closButton = document.querySelector("dialog button");
+const submitBtn = bookDialog.querySelector("#submit");
 
 logButton.addEventListener("click", () => {
   dialog.showModal();
@@ -9,6 +10,33 @@ logButton.addEventListener("click", () => {
 closButton.addEventListener("click", () => {
   dialog.close();
 });
+
+submitBtn.addEventListener("click", (event) => {
+  event.preventDefault(); // We don't want to submit this fake form
+  bookDialog.close(); // Have to send the select box value here.
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const myLibrary = [];
 
