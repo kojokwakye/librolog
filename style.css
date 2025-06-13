@@ -43,7 +43,6 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  /* outline: 1px solid red; */
   padding: 10px;
   border-bottom: 1px solid white;
 }
@@ -60,7 +59,7 @@ body {
   background: none;
   border: none;
   color: rgb(255, 255, 255);
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bolder;
   padding-right: 25px;
 }
