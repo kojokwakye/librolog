@@ -12,38 +12,19 @@ closButton.addEventListener("click", () => {
 });
 
 submitBtn.addEventListener("click", (event) => {
-  event.preventDefault(); // We don't want to submit this fake form
-  bookDialog.close(); // Have to send the select box value here.
+  event.preventDefault();
+  bookDialog.close();
 });
 
+const myLibrary = [];
 
+function Book(title, author, pages) {
+  // the constructor...
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const myLibrary = [];
-
-// function Book() {
-//   // the constructor...
-// }
-
-// function addBookToLibrary() {
-//   // take params, create a book then store it in the array
-// }
+function addBookToLibrary(title, author, pages) {
+  // take params, create a book then store it in the array
+}
