@@ -3,6 +3,11 @@ const logButton = document.querySelector("dialog  + button");
 const closButton = document.querySelector("dialog button");
 const submitBtn = bookDialog.querySelector("#submit");
 
+// // form
+// let title = document.getElementById("title");
+// let author = document.getElementById("author");
+// let pages = document.getElementById("pages");
+
 logButton.addEventListener("click", () => {
   dialog.showModal();
 });
@@ -10,39 +15,6 @@ logButton.addEventListener("click", () => {
 closButton.addEventListener("click", () => {
   dialog.close();
 });
-
-function submitFxn() {
-  document.getElementById("submit");
-}
-
-let bookLog = document.getElementById("bookLog");
-bookLog.addEventListener("submit", (event) => {
-  event.preventDefault();
-  let title = document.getElementById("title");
-  let author = document.getElementById("author");
-  let pages = document.getElementById("pages");
-
-  if (title.value == "" || author.value == "" || pages.value == "") {
-    console.log("please fill the form");
-    // error
-  } else {
-    //perform
-    console.log(
-      `title: ${title.value} 
-      author: ${author.value} 
-      pages: ${pages.value}`
-    );
-    title.value = "";
-    author.value = "";
-    pages.value = "";
-  }
-});
-
-// submitBtn.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   // submitFxn()
-//   bookDialog.close();
-// });
 
 const myLibrary = [];
 
@@ -53,6 +25,8 @@ function Book(title, author, pages) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.id = crypto.randomUUID();
+  // addBookToLibrary();
 }
 
 function addBookToLibrary(title, author, pages) {
@@ -60,3 +34,22 @@ function addBookToLibrary(title, author, pages) {
   const newBook = new Book(title, author, pages);
   myLibrary.push(newBook);
 }
+let bookLog = document.getElementById("bookLog");
+bookLog.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // let title = document.getElementById("title");
+  // let author = document.getElementById("author");
+  // let pages = document.getElementById("pages");
+
+  if (title.value == "" || author.value == "" || pages.value == "") {
+    console.log("please fill the form");
+  } else {
+    console.log(`${title.value} ${author.value}. ${pages.value}`);
+  }
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  addBookToLibrary();
+console.log(myLibrary);
+
+});
