@@ -19,6 +19,7 @@ body {
 
 .form-popup {
   padding: 10px;
+  width: 410px;
 }
 #bookDialog {
   background: #14181c 0 -1px repeat-x;
