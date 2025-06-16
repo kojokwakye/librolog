@@ -3,39 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="images/icons8-books-100.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="images/icons8-books-100.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Library</title>
   </head>
   <body>
-    <dialog id="bookDialog">
-      <div class="form-popup" id="form">
-        <div id="popup">
-          <div class="form-header">
-            <h1>add book</h1>
-            <button class="close" id="closebtn" formmethod="dialog">x</button>
+    <div class="content">
+      <dialog id="bookDialog">
+        <div class="form-popup" id="form">
+          <div id="popup">
+            <div class="form-header">
+              <h1>add book</h1>
+              <button class="close" id="closebtn" formmethod="dialog">x</button>
+            </div>
+            <form id="bookLog">
+              <!-- add book  -->
+              <label for="title"> title</label>
+              <input id="title" type="text" required />
+
+              <label for="author">author</label>
+              <input id="author" type="text" required />
+
+              <label for="pages">Pages</label>
+
+              <input type="number" id="pages" name="pages" required />
+
+              <input type="checkbox" name="checkbox" id="checkbox" />
+              <label for="submit">have you read</label>
+              <button class="logandsub" id="submit" type="submit">
+                submit
+              </button>
+            </form>
           </div>
-          <form id="bookLog" >
-            <!-- add book  -->
-            <label for="title"> title</label>
-            <input id="title" type="text" required />
-
-            <label for="author">author</label>
-            <input id="author" type="text" required />
-
-            <label for="pages">Pages</label>
-
-            <input type="number" id="pages" name="pages" required />
-
-            <input type="checkbox" name="checkbox" id="checkbox" />
-            <label for="submit">have you read</label>
-            <button class="logandsub" id="submit" type="submit">submit</button>
-          </form>
         </div>
-      </div>
-    </dialog>
-    <button class="logandsub" id="log">+ log book</button>
-
+      </dialog>
+      <button class="logandsub" id="log">+ log book</button>
+    </div>
     <!-- always remember to add js file here because it just works -->
     <script src="js.js"></script>
   </body>
