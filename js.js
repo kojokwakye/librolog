@@ -40,16 +40,11 @@ bookLog.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (title.value == "" || author.value == "" || pages.value == "") {
-    console.log("please fill the form");
+    console.log("please log the form");
   } else {
   }
   addBookToLibrary();
   console.log(myLibrary[i]);
-  // close();
-
-  // display book on screen
-  let displayCurrent = document.querySelector("#content");
-  displayCurrent.textContent = myLibrary;
 
   title.value = "";
   author.value = "";
