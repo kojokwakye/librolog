@@ -7,8 +7,12 @@ const submitBtn = bookDialog.querySelector("#submit");
 
 logButton.addEventListener("click", () => {
   dialog.showModal();
+  // dialog.close();
 });
 
+// submitBtn.addEventListener("click", () => {
+//   dialog.close();
+// });
 closButton.addEventListener("click", () => {
   dialog.close();
 });
@@ -31,20 +35,25 @@ function addBookToLibrary(title, author, pages) {
   myLibrary.push(newBook);
 
   for (i in myLibrary) {
-    // console.log (myLibrary[i])
+    console.log(
+      myLibrary[i].title,
+      myLibrary[i].author,
+      myLibrary[i].pages,
+      myLibrary[i].id
+    );
   }
+  let displayBooks = document.querySelector(".shelf");
+  displayBooks.innerText += ` title : ${myLibrary[i].title},
+  author : ${myLibrary[i].author}
+  pages read: ${myLibrary[i].pages}`;
 }
 
 let bookLog = document.getElementById("bookLog");
 bookLog.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (title.value == "" || author.value == "" || pages.value == "") {
-    console.log("please log the form");
-  } else {
-  }
   addBookToLibrary();
-  console.log(myLibrary[i]);
+  // console.log(myLibrary[i]);
 
   title.value = "";
   author.value = "";
