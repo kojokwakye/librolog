@@ -31,7 +31,7 @@ function addBookToLibrary(title, author, pages) {
   myLibrary.push(newBook);
 
   for (i in myLibrary) {
-    // console.log (Book)
+    // console.log (myLibrary[i])
   }
 }
 
@@ -45,7 +45,11 @@ bookLog.addEventListener("submit", (event) => {
   }
   addBookToLibrary();
   console.log(myLibrary[i]);
-  // alert(myLibrary[i].title); 
+  // close();
+
+  // display book on screen
+  let displayCurrent = document.querySelector("#content");
+  displayCurrent.textContent = myLibrary;
 
   title.value = "";
   author.value = "";
