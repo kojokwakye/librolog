@@ -10,9 +10,15 @@ logButton.addEventListener("click", () => {
   // dialog.close();
 });
 
-// submitBtn.addEventListener("click", () => {
-//   dialog.close();
-// });
+// if (title.value == "" || author.value == "" || pages.value == "") {
+// }
+submitBtn.addEventListener("click", () => {
+  if (title.value == "" || author.value == "" || pages.value == "") {
+  } else {
+    dialog.close();
+  }
+});
+
 closButton.addEventListener("click", () => {
   dialog.close();
 });
@@ -34,6 +40,11 @@ function addBookToLibrary(title, author, pages) {
   const newBook = new Book(title, author, pages);
   myLibrary.push(newBook);
 
+  // if (myLibrary.length === 0) {
+  //   myLibrary.innertext = '<div class="no-users">No users remaining</div>';
+  //   return;
+  // }
+
   for (i in myLibrary) {
     console.log(
       myLibrary[i].title,
@@ -43,9 +54,11 @@ function addBookToLibrary(title, author, pages) {
     );
   }
   let displayBooks = document.querySelector(".shelf");
-  displayBooks.innerText += ` title : ${myLibrary[i].title},
+  displayBooks.innerText += `title : ${myLibrary[i].title},
   author : ${myLibrary[i].author}
   pages read: ${myLibrary[i].pages}`;
+  // const removebtn = document.createElement(".shelf + button");
+  // removebtn.addEventListener("click", (event) => {});
 }
 
 let bookLog = document.getElementById("bookLog");
@@ -59,3 +72,8 @@ bookLog.addEventListener("submit", (event) => {
   author.value = "";
   pages.value = "";
 });
+
+// let displayBooks = document.querySelector(".shelf");
+// displayBooks.innerText += `title : ${myLibrary[i].title},
+//   author : ${myLibrary[i].author}
+//   pages read: ${myLibrary[i].pages}`;
