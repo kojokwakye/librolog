@@ -1,6 +1,7 @@
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
 const pagesInput = document.getElementById("pages");
+
 const dialog = document.querySelector("dialog");
 const logButton = document.querySelector("dialog  + button");
 const closButton = document.querySelector("dialog button");
@@ -52,15 +53,26 @@ function addBookToLibrary(title, author, pages, isRead) {
   const newBook = new Book(title, author, pages, isRead);
   myLibrary.push(newBook);
 
+  // Create a new div for this book
+  const bookDiv = document.createElement("div");
+  // const bookshelf = document.getElementById(".shelf");
+  bookDiv.classList.add("book");
+
+  // Add book details inside the div
+  bookDiv.innerText = `
+    title: ${newBook.title}
+    author: ${newBook.author}
+    pages: ${newBook.pages}
+    id:${newBook.id}
+    read: ${newBook.checkbox}
+  `;
+
   for (const book of myLibrary) {
     console.log(book.title, book.author, book.pages, book.id, book.checkbox);
   }
   let displayBooks = document.querySelector(".shelf");
-  displayBooks.innerText += `title : ${newBook.title}
-  author : ${newBook.author}
-  number of pages : ${newBook.pages}
-  id: ${newBook.id}
- read: ${newBook.checkbox} `;
+
+  displayBooks.appendChild(bookDiv);
 }
 
 let bookLog = document.getElementById("bookLog");
