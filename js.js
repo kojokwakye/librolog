@@ -1,40 +1,13 @@
-const titleInput = document.getElementById("title");
-const authorInput = document.getElementById("author");
-const pagesInput = document.getElementById("pages");
-
 const dialog = document.querySelector("dialog");
-const logButton = document.querySelector("dialog  + button");
-const closButton = document.querySelector("dialog button");
-const submitBtn = bookDialog.querySelector("#submit");
+const logButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
+const bookLog = document.getElementById("bookLog");
+
 let checkBox = bookDialog.querySelector("#checkbox");
 
 logButton.addEventListener("click", () => {
   dialog.showModal();
   document.body.style.filter = "blur(1px)";
-});
-
-submitBtn.addEventListener("click", () => {
-  if (title.value == "" || author.value == "" || pages.value == "") {
-    // do nothingI
-  } else {
-    dialog.close();
-    document.body.style.filter = "";
-  }
-});
-
-function readStatus() {
-  checkBox.addEventListener("click", () => {
-    if (checkBox.checked === true) {
-      console.log("read");
-    } else {
-      console.log("not read");
-    }
-  });
-}
-
-closButton.addEventListener("click", () => {
-  dialog.close();
-  document.body.style.filter = "";
 });
 
 const myLibrary = [];
@@ -51,45 +24,55 @@ function Book(title, author, pages, isRead) {
 }
 
 function addBookToLibrary(title, author, pages, isRead) {
-  // take params, create a book then store it in the array
   const newBook = new Book(title, author, pages, isRead);
   myLibrary.push(newBook);
-
-  // Create a new div for this book
+  // create a new div for this book
   const bookDiv = document.createElement("div");
-  // const bookshelf = document.getElementById(".shelf");
   bookDiv.classList.add("book");
+  bookDiv.setAttribute("data-book-id", newBook.id);
 
-  // Add book details inside the div
-  bookDiv.innerText = `
-    title: ${newBook.title}
-    author: ${newBook.author}
-    pages: ${newBook.pages}
-    id:${newBook.id}
-    read: ${newBook.checkbox}
-  `;
+  // add book details inside the div
+  bookDiv.innerHTML = `<p class="title">${newBook.title}</p>
+ <p>${newBook.author} </p>
+ <p> ${newBook.pages} pages </p>
+ <p>${newBook.id} </p>
+ <p class="isread">${newBook.checkbox }</p>
+<div><button class="toggle-read">Read</button>
+  <button class="remove">remove</button> </div>
+`;
 
   for (const book of myLibrary) {
     console.log(book.title, book.author, book.pages, book.id, book.checkbox);
   }
   let displayBooks = document.querySelector(".shelf");
-
   displayBooks.appendChild(bookDiv);
 }
 
-let bookLog = document.getElementById("bookLog");
+// submit
 bookLog.addEventListener("submit", (event) => {
   event.preventDefault();
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const readStatus = document.getElementById("checkbox").checked;
+  addBookToLibrary(title, author, pages, readStatus);
+  bookLog.reset();
+  dialog.close();
+  document.body.style.filter = ""; // remove blur
+});
 
-  addBookToLibrary(
-    titleInput.value,
-    authorInput.value,
-    pagesInput.value,
-    checkBox.checked
-  );
+// sanple library
+addBookToLibrary(
+  "The Housekeeper and the Professor ",
+  "Yōko Ogawa",
+  295,
+  false
+);
+addBookToLibrary("Anxious People", "Fredrik Backman", 290, true);
+addBookToLibrary("Under the Whispering Door", "TJ Klune", 300, false);
 
-  title.value = "";
-  author.value = "";
-  pages.value = "";
-  checkBox.checked = false;
+// close button
+closeButton.addEventListener("click", () => {
+  dialog.close();
+  document.body.style.filter = ""; // remove blur
 });
