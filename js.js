@@ -10,7 +10,7 @@ let checkBox = bookDialog.querySelector("#checkbox");
 
 logButton.addEventListener("click", () => {
   dialog.showModal();
-  // dialog.close();
+  document.body.style.filter = "blur(1px)";
 });
 
 submitBtn.addEventListener("click", () => {
@@ -18,6 +18,7 @@ submitBtn.addEventListener("click", () => {
     // do nothingI
   } else {
     dialog.close();
+    document.body.style.filter = "";
   }
 });
 
@@ -33,6 +34,7 @@ function readStatus() {
 
 closButton.addEventListener("click", () => {
   dialog.close();
+  document.body.style.filter = "";
 });
 
 const myLibrary = [];
