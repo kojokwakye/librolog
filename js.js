@@ -2,8 +2,7 @@ const dialog = document.querySelector("dialog");
 const logButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
 const bookLog = document.getElementById("bookLog");
-
-let checkBox = bookDialog.querySelector("#checkbox");
+let checkBox = document.querySelector("#checkbox"); // Fixed: removed bookDialog
 
 logButton.addEventListener("click", () => {
   dialog.showModal();
@@ -19,13 +18,20 @@ function Book(title, author, pages, isRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.isRead = isRead;
   this.id = crypto.randomUUID();
-  this.checkbox = isRead ? "read" : "not read";
 }
+
+// add toggle method to Book prototype
+Book.prototype.toggleRead = function () {
+  this.isRead = !this.isRead;
+  this.checkbox = this.isRead ? "read" : "not read";
+};
 
 function addBookToLibrary(title, author, pages, isRead) {
   const newBook = new Book(title, author, pages, isRead);
   myLibrary.push(newBook);
+
   // create a new div for this book
   const bookDiv = document.createElement("div");
   bookDiv.classList.add("book");
@@ -33,17 +39,38 @@ function addBookToLibrary(title, author, pages, isRead) {
 
   // add book details inside the div
   bookDiv.innerHTML = `<p class="title">${newBook.title}</p>
- <p>${newBook.author} </p>
- <p> ${newBook.pages} pages </p>
- <p>${newBook.id} </p>
- <p class="isread">${newBook.checkbox }</p>
-<div><button class="toggle-read">Read</button>
-  <button class="remove">remove</button> </div>
-`;
+     <p>${newBook.author} </p>
+     <p> ${newBook.pages} pages </p>
+     <p class="isread">${newBook.isRead ? "read" : "not read"}</p>
+    <div><button class="toggle-read">Toggle Read</button>
+     <button class="remove">Remove</button> </div>
+    `;
 
-  for (const book of myLibrary) {
-    console.log(book.title, book.author, book.pages, book.id, book.checkbox);
-  }
+  // add event listener to specific book's toggle button
+  const toggleButton = bookDiv.querySelector(".toggle-read");
+  toggleButton.addEventListener("click", () => {
+    newBook.toggleRead();
+
+    // update the display
+    const isReadElement = bookDiv.querySelector(".isread");
+    isReadElement.textContent = newBook.checkbox;
+
+    // console.log(`${newBook.title} is now: ${newBook.checkbox}`);
+  });
+
+  // remove button
+  const removeButton = bookDiv.querySelector(".remove");
+  removeButton.addEventListener("click", () => {
+    // remove from array
+    const index = myLibrary.findIndex((book) => book.id === newBook.id);
+    if (index > -1) {
+      myLibrary.splice(index, 1);
+    }
+    // remove from display
+    bookDiv.remove();
+    console.log(`Removed: ${newBook.title}`);
+  });
+
   let displayBooks = document.querySelector(".shelf");
   displayBooks.appendChild(bookDiv);
 }
@@ -55,13 +82,14 @@ bookLog.addEventListener("submit", (event) => {
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
   const readStatus = document.getElementById("checkbox").checked;
+
   addBookToLibrary(title, author, pages, readStatus);
   bookLog.reset();
   dialog.close();
   document.body.style.filter = ""; // remove blur
 });
 
-// sanple library
+// sample library
 addBookToLibrary(
   "The Housekeeper and the Professor ",
   "Yōko Ogawa",

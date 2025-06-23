@@ -11,19 +11,27 @@ html {
 body {
   background: #14181c 0 -1px repeat-x;
   min-height: 100%;
-  color: whitesmoke;
+  color: #789;
   overflow: auto;
   font-family: monospace;
 }
 
+h1 {
+  /* text-align: center; */
+  color: whitesmoke;
+  border-bottom: 1px solid #77889926;
+  padding: 5px;
+}
+
 .book {
-  border-right: 1px solid red;
+  border-right: 1px solid #789;
   line-height: 30px;
   float: left;
   width: 25%;
   padding: 0 10px;
   margin-bottom: 20px;
-  background-color:  #14181c4f 0 -1px repeat-x;
+  background-color: #14181c4f 0 -1px repeat-x;
+  font-size: 17px;
   /* margin: 20px; */
 }
 
@@ -34,6 +42,11 @@ body {
   content: "";
   display: table;
   clear: both;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.2em; /* or whatever size you want */
 }
 
 .content {
@@ -79,6 +92,17 @@ body {
   color: #fff;
   border: none;
   padding: 0.6rem;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-read,
+.remove {
+  border: 1px solid#77889926;
+  font-size: 14px;
+  color: white;
+  background: #14181c;
+  padding: 0.4em;
   cursor: pointer;
 }
 
@@ -127,10 +151,15 @@ input[type="number"] {
   .book {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
-    background-color: red;
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+    border-right: none;
+    border-bottom: 1px solid #789;
   }
-
+  .title {
+    font-weight: bold;
+    font-size: 1em;
+  }
   .form-popup {
     width: 253px;
     height: 370px;

@@ -12,47 +12,15 @@
     <title>Library</title>
   </head>
   <body>
-    <div id="shelf" class="shelf">
-      <div class="book">
-        <br />
-        title: anxious people<br />
-        author: fredrik backman<br />
-        pages: 200<br />
-        id:8fa0a70f-85c3-4df6-9529-c4fa130d12e9<br />
-        read: not read<br />
-      </div>
-      <div class="book">
-        <br />
-        title: Under the Whispering Door <br />
-        author: TJ Klune<br />
-        pages: 376<br />
-        id:8bf4cac4-c683-4210-a0ff-106f24a26570<br />
-        read: read<br />
-      </div>
-      <div class="book">
-        <br />
-        title: The Housekeeper and the Professor <br />
-        author: Yōko Ogawa with Stephen Snyder<br />
-        pages: 192<br />
-        id:c74ebb1d-5b7c-4f9a-bbf6-a1e9649ccec8<br />
-        read: not read<br />
-      </div>
-      <div class="book">
-        <br />
-        title: A Friend is a Gift You Give Yourself <br />
-        author: William Boyle <br />
-        pages: 312<br />
-        id:b4a5bd73-e261-413c-99cc-f83e7614e781<br />
-        read: read<br />
-      </div>
-    </div>
+    <h1>Library</h1>
+    <div id="shelf" class="shelf"></div>
 
     <div class="content">
       <dialog id="bookDialog">
         <div class="form-popup" id="form">
           <div id="popup">
             <div class="form-header">
-              <h1>add book</h1>
+              <h2>add book</h2>
               <button class="close" id="closebtn" formmethod="dialog">x</button>
             </div>
             <form id="bookLog">
@@ -67,12 +35,17 @@
 
               <input type="number" id="pages" name="pages" required />
 
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <label for="submit">have you read</label>
+              <div class="lower-form">
+                <label class="switch" for="submit">
+                  <input type="checkbox" name="checkbox" id="checkbox" />
+                  read
+                  <span class="slider"></span>
+                </label>
 
-              <button class="logandsub" id="submit" type="submit">
-                submit
-              </button>
+                <button class="logandsub" id="submit" type="submit">
+                  submit
+                </button>
+              </div>
             </form>
           </div>
         </div>
