@@ -46,7 +46,7 @@ h1 {
 
 .title {
   font-weight: bold;
-  font-size: 1.2em; /* or whatever size you want */
+  font-size: 1.2em;
 }
 
 .content {
@@ -58,7 +58,19 @@ h1 {
 }
 .form-popup {
   padding: 7px;
-  width: 370px;
+  width: 360px;
+  margin: 5px;
+}
+
+form#bookLog {
+  display: flex;
+  flex-direction: column;
+  /* padding: 5px; */
+}
+#checkbox {
+  width: 20px;
+  height: 34px;
+  border: none;
 }
 #bookDialog {
   background: #14181c 0 -1px repeat-x;
@@ -69,7 +81,7 @@ h1 {
 .form-popup input[type="number"] {
   width: 100%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 24px 0;
   border: none;
 }
 
@@ -86,12 +98,19 @@ h1 {
   /*! padding: 0px 0px; */
   border-bottom: 1px solid white;
 }
-
+label.switch {
+  margin-bottom: 6px;
+  /* outline: 1px solid red; */
+  /* text-align: center; */
+  /* width: 140px; */
+  display: flex;
+  align-items: center;
+}
 .logandsub {
   background: #00ac1c;
   color: #fff;
   border: none;
-  padding: 0.6rem;
+  padding: 1em;
   cursor: pointer;
   font-size: 14px;
 }
@@ -160,8 +179,15 @@ input[type="number"] {
     font-weight: bold;
     font-size: 1em;
   }
+
+  #checkbox {
+    width: 16px;
+    height: 16px;
+    border: none;
+  }
+
   .form-popup {
     width: 253px;
-    height: 370px;
+    /* height: 370px; */
   }
 }
