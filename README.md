@@ -11,7 +11,7 @@ remove books you don't want
 
 ### how to use
 
--click "add book" button  
+-click "log book" button  
 
 -fill out the form
 
