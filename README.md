@@ -5,9 +5,9 @@ a simple web app to track your books. like a todo list but for books
 
 ## what it does
 
-add books to your library
-mark books as read/unread
-remove books you don't want
+add books to your library  
+mark books as read/unread  
+remove books you don't want  
 
 ### how to use
 
