@@ -26,3 +26,5 @@ remove books you don't want
 "the housekeeper and the professor" by yōko ogawa  
 "anxious people" by fredrik backman  
 "under the whispering door" by tj klune
+
+##### this app is a demo, all data is stored in localStorage.
