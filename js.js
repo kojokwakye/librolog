@@ -51,6 +51,11 @@ function addBookToLibrary(title, author, pages, isRead) {
   toggleButton.addEventListener("click", () => {
     newBook.toggleRead();
 
+    if (newBook.checkbox == "read") {
+      document.querySelector(".book").style.color = "green";
+      console.log("red");
+    } else document.querySelector(".book").style.color = "red";
+
     // update the display
     const isReadElement = bookDiv.querySelector(".isread");
     isReadElement.textContent = newBook.checkbox;
