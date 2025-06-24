@@ -19,6 +19,7 @@ function Book(title, author, pages, isRead) {
   this.author = author;
   this.pages = pages;
   this.isRead = isRead;
+  this.checkbox = isRead ? "read" : "not read";
   this.id = crypto.randomUUID();
 }
 
@@ -52,10 +53,12 @@ function addBookToLibrary(title, author, pages, isRead) {
     newBook.toggleRead();
 
     if (newBook.checkbox == "read") {
-      document.querySelector(".book").style.color = "green";
-      console.log("red");
-    } else document.querySelector(".book").style.color = "red";
-
+      bookDiv.style.color = "green";
+      // console.log("green");
+    } else {
+      bookDiv.style.color = "";
+      // console.log("red");
+    }
     // update the display
     const isReadElement = bookDiv.querySelector(".isread");
     isReadElement.textContent = newBook.checkbox;
