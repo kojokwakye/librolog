@@ -63,7 +63,6 @@ function addBookToLibrary(title, author, pages, isRead) {
     const isReadElement = bookDiv.querySelector(".isread");
     isReadElement.textContent = newBook.checkbox;
 
-    // console.log(`${newBook.title} is now: ${newBook.checkbox}`);
   });
 
   // remove button
